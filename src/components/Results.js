@@ -18,12 +18,12 @@ function Results(props) {
         
       }
     }, [searchTerm, location.pathname]);
-    if(!touched){
+//     if(!touched){
 
-    return <div className='text-center p-10 mt-10'>
-    <h1>HOLA USER</h1>
-</div>
-    }
+//     return <div className='text-center p-10 mt-10'>
+//     <h1>HOLA USER</h1>
+// </div>
+//     }
     if(isLoading){
         return <Loading/>
     }

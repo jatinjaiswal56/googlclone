@@ -7,7 +7,7 @@ const baseUrl = "https://google-search3.p.rapidapi.com/api/v1";
 function ResultContextProvider(props) {
   const [results, Setresults] = useState([]);
   const [isLoading, setisLoading] = useState(false);
-  const [searchTerm, setsearchTerm] = useState("");
+  const [searchTerm, setsearchTerm] = useState("India Today");
 
   const getresults = async (type) => {
     setisLoading(true);
@@ -16,7 +16,7 @@ function ResultContextProvider(props) {
       headers: {
         "X-User-Agent": "desktop",
         "X-Proxy-Location": "EU",
-        "X-RapidAPI-Key": "2201ac8713mshfc0709430c61522p10503cjsncd2b22121e5c",
+        "X-RapidAPI-Key": process.env.REACT_APP_KEY,
         "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
       }
       
