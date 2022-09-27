@@ -1,12 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import Footer from './components/Footer';
+import  Navbar  from './components/Navbar';
+import  Routess  from './components/Routess';
+
+const App = () => {
+  
+  const [darkTheme, setDarkTheme] = useState(true);
+  // setDarkTheme={setDarkTheme} darkTheme={darkTheme}
+  const onchangedarkthemehandler=()=>{
+    setDarkTheme(!darkTheme);
+  }
   return (
-    <div className="App">
-      
+    <div className={darkTheme ? 'dark' : ''}>
+      <div className="dark:bg-gray-900 bg-gray-100 dark:text-gray-200 black min-h-screen">
+        <Navbar darkTheme={darkTheme} onSetTheme={onchangedarkthemehandler} />
+        {/* {darkTheme ? "💡 Light" : "🌙 Dark"} */}
+        
+        <Routess />
+        <Footer />
+      </div>
     </div>
+
   );
-}
+};
 
 export default App;
